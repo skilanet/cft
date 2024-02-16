@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/people_surround"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginHorizontal="8dp"
-    android:layout_marginVertical="4dp">
+    android:layout_marginVertical="4dp"
+    android:background="@drawable/people_surround">
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_tags="tv_fio_main, tv_address_main, tv_phone_main"
-        app:barrierDirection="end"/>
+        app:barrierDirection="end"
+        app:constraint_referenced_tags="tv_fio_main, tv_address_main, tv_phone_main" />
 
     <ImageView
         android:id="@+id/iv_person_photo"
@@ -28,48 +28,56 @@
     <TextView
         android:id="@+id/tv_fio_main"
         style="@style/people_base_main_text_style"
+        android:layout_marginTop="4dp"
         android:text="@string/fio"
         app:layout_constraintStart_toEndOf="@id/iv_person_photo"
-        app:layout_constraintTop_toTopOf="@id/iv_person_photo"
-        app:layout_constraintTag="tv_fio_main"/>
+        app:layout_constraintTag="tv_fio_main"
+        app:layout_constraintTop_toTopOf="@id/iv_person_photo" />
+
     <TextView
         android:id="@+id/tv_fio_info"
         style="@style/people_base_info_text_style"
-        app:layout_constraintStart_toEndOf="@id/barrier_main"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="4dp"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_fio_main"
-        tools:text="Miss Jennie Nichols"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier_main"
+        tools:text="Miss Jennie Nichols" />
+
     <TextView
         android:id="@+id/tv_address_main"
         style="@style/people_base_main_text_style"
-        app:layout_constraintStart_toEndOf="@id/iv_person_photo"
-        app:layout_constraintTop_toBottomOf="@id/tv_fio_main"
         android:text="@string/address"
-        app:layout_constraintTag="tv_address_main"/>
+        app:layout_constraintBottom_toTopOf="@id/tv_phone_info"
+        app:layout_constraintStart_toEndOf="@id/iv_person_photo"
+        app:layout_constraintTag="tv_address_main"
+        app:layout_constraintTop_toBottomOf="@id/tv_fio_main" />
 
     <TextView
         android:id="@+id/tv_address_info"
         style="@style/people_base_info_text_style"
-        app:layout_constraintStart_toEndOf="@id/barrier_main"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="4dp"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_address_main"
-        tools:text="8929 Valwood Pkwy"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier_main"
+        tools:text="8929 Valwood Pkwy" />
 
     <TextView
         android:id="@+id/tv_phone_main"
         style="@style/people_base_main_text_style"
         android:text="@string/phone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/iv_person_photo"
-        app:layout_constraintTop_toBottomOf="@id/tv_address_main"
-        app:layout_constraintTag="tv_phone_main"/>
+        app:layout_constraintTag="tv_phone_main"
+        app:layout_constraintTop_toBottomOf="@id/tv_address_main" />
 
     <TextView
         android:id="@+id/tv_phone_info"
         style="@style/people_base_info_text_style"
-        app:layout_constraintStart_toEndOf="@id/barrier_main"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="4dp"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_phone_main"
-        tools:text="(272) 790-0888"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier_main"
+        tools:text="(272) 790-0888" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
