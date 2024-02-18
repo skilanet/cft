@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_8_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="8dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_4_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="4dp" />
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:importantForAccessibility="no"/>
+
+        <ImageView
+            android:id="@+id/iv_person_photo"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/placeholder"
+            app:layout_constraintStart_toStartOf="@id/guideline_8_start"
+            app:layout_constraintTop_toBottomOf="@id/btn_back"
+            android:layout_marginTop="16dp"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/iv_person_photo"
+            app:layout_constraintStart_toStartOf="@id/iv_person_photo"
+            app:layout_constraintTop_toBottomOf="@id/iv_person_photo" />
+
+        <TextView
+            android:id="@+id/tv_fio_main"
+            style="@style/people_main_text_style"
+            android:text="@string/fio"
+            app:layout_constraintStart_toEndOf="@id/iv_person_photo"
+            app:layout_constraintTag="tv_fio_main"
+            app:layout_constraintTop_toTopOf="@id/iv_person_photo" />
+
+        <TextView
+            android:id="@+id/tv_gender_main"
+            style="@style/people_main_text_style"
+            android:text="@string/gender"
+            app:layout_constraintBottom_toTopOf="@id/tv_age_main"
+            app:layout_constraintStart_toEndOf="@id/iv_person_photo"
+            app:layout_constraintTag="tv_address_main"
+            app:layout_constraintTop_toBottomOf="@id/tv_fio_main" />
+
+        <TextView
+            android:id="@+id/tv_age_main"
+            style="@style/people_main_text_style"
+            android:text="@string/age"
+            app:layout_constraintBottom_toTopOf="@id/tv_phone_main"
+            app:layout_constraintStart_toEndOf="@id/iv_person_photo"
+            app:layout_constraintTag="tv_address_main"
+            app:layout_constraintTop_toBottomOf="@id/tv_gender_main" />
+
+        <TextView
+            android:id="@+id/tv_phone_main"
+            style="@style/people_main_text_style"
+            android:text="@string/phone"
+            app:layout_constraintBottom_toTopOf="@id/tv_email_main"
+            app:layout_constraintStart_toEndOf="@id/iv_person_photo"
+            app:layout_constraintTag="tv_phone_main"
+            app:layout_constraintTop_toBottomOf="@id/tv_age_main" />
+
+        <TextView
+            android:id="@+id/tv_email_main"
+            style="@style/people_main_text_style"
+            android:text="@string/email"
+            app:layout_constraintBottom_toBottomOf="@id/iv_person_photo"
+            app:layout_constraintStart_toEndOf="@id/iv_person_photo"
+            app:layout_constraintTag="tv_email_main" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_tags="tv_fio_main, tv_address_main, tv_phone_main, tv_email_main" />
+
+        <TextView
+            android:id="@+id/tv_fio_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_fio_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/barrier_main"
+            tools:text="Miss Jennie Nichols" />
+
+        <TextView
+            android:id="@+id/tv_gender_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_gender_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/barrier_main"
+            tools:text="female" />
+
+        <TextView
+            android:id="@+id/tv_age_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_age_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/barrier_main"
+            tools:text="30" />
+
+        <TextView
+            android:id="@+id/tv_phone_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_phone_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/barrier_main"
+            tools:text="(272) 790-0888" />
+
+        <TextView
+            android:id="@+id/tv_email_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_email_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/barrier_main"
+            tools:text="jennie.nichols@example.com" />
+
+        <TextView
+            android:id="@+id/tv_dob_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/dob"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_person_photo" />
+
+        <TextView
+            android:id="@+id/tv_nat_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/nat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_dob_main" />
+
+        <TextView
+            android:id="@+id/tv_address_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/address"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_nat_main" />
+
+        <TextView
+            android:id="@+id/tv_city_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/city"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_address_main" />
+
+        <TextView
+            android:id="@+id/tv_state_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/state"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_city_main" />
+
+        <TextView
+            android:id="@+id/tv_country_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/country"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_state_main" />
+
+        <TextView
+            android:id="@+id/tv_coordinates_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/coordinates"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_country_main" />
+
+        <TextView
+            android:id="@+id/tv_latitude_main"
+            style="@style/people_main_text_style"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/latitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_coordinates_main" />
+
+        <TextView
+            android:id="@+id/tv_longitude_main"
+            style="@style/people_main_text_style"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/longitude"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_latitude_main" />
+
+        <TextView
+            android:id="@+id/tv_postcode_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/postcode"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_longitude_main" />
+
+        <TextView
+            android:id="@+id/tv_mobile_phone_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/mobile_phone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTag="tv_mobile_phone_main"
+            app:layout_constraintTop_toBottomOf="@id/tv_postcode_main" />
+
+        <TextView
+            android:id="@+id/tv_timezone_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/timezone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_mobile_phone_main" />
+
+        <TextView
+            android:id="@+id/tv_username_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTag="tv_username_main"
+            app:layout_constraintTop_toBottomOf="@id/tv_timezone_info" />
+
+        <TextView
+            android:id="@+id/tv_password_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_username_main" />
+
+        <TextView
+            android:id="@+id/tv_dor_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/dor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_password_main" />
+
+        <TextView
+            android:id="@+id/tv_uuid_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/uuid"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_dor_main" />
+
+        <TextView
+            android:id="@+id/tv_salt_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/salt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_uuid_info" />
+
+        <TextView
+            android:id="@+id/tv_md5_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/md5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_salt_main" />
+
+        <TextView
+            android:id="@+id/tv_sha1_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/sha1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_md5_main" />
+
+        <TextView
+            android:id="@+id/tv_sha256_main"
+            style="@style/people_main_text_style"
+            android:layout_marginTop="8dp"
+            android:text="@string/sha256"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_sha1_info" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/lower_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_tags="tv_mobile_phone_main, tv_username_main, tv_ssn_main" />
+
+        <TextView
+            android:id="@+id/tv_dob_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_dob_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="08.03.1992" />
+
+        <TextView
+            android:id="@+id/tv_nat_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_nat_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="US" />
+
+        <TextView
+            android:id="@+id/tv_address_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_address_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="8929 Valwood Pkwy" />
+
+        <TextView
+            android:id="@+id/tv_city_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_city_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="Billings" />
+
+        <TextView
+            android:id="@+id/tv_state_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_state_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="Michigan" />
+
+        <TextView
+            android:id="@+id/tv_country_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_country_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="United States" />
+
+        <TextView
+            android:id="@+id/tv_latitude_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_latitude_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="-69.8246" />
+
+        <TextView
+            android:id="@+id/tv_longitude_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_longitude_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="134.8719" />
+
+        <TextView
+            android:id="@+id/tv_postcode_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_postcode_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="63104" />
+
+        <TextView
+            android:id="@+id/tv_mobile_phone_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_mobile_phone_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="US" />
+
+        <TextView
+            android:id="@+id/tv_timezone_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_timezone_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="Adelaide, Darwin (+9:30)"
+            android:lines="2"/>
+
+        <TextView
+            android:id="@+id/tv_username_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_username_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="yellowpeacock117" />
+
+        <TextView
+            android:id="@+id/tv_password_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_password_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="addison" />
+
+        <TextView
+            android:id="@+id/tv_dor_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_dor_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="09.07.2007" />
+
+        <TextView
+            android:id="@+id/tv_uuid_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_uuid_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="7a0eed16-9430-4d68-901f-c0d4c1c3bf00"
+            android:lines="2"/>
+
+        <TextView
+            android:id="@+id/tv_salt_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_salt_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="sld1yGtd" />
+
+        <TextView
+            android:id="@+id/tv_md5_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_md5_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="ab54ac4c0be9480ae8fa5e9e2a5196a3" />
+
+        <TextView
+            android:id="@+id/tv_sha1_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_sha1_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            tools:text="edcf2ce613cbdea349133c52dc2f3b83168dc51b"
+            android:lines="2"/>
+
+        <TextView
+            android:id="@+id/tv_sha256_info"
+            style="@style/people_info_text_style"
+            android:fontFamily="@font/main_font"
+            android:gravity="end"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_sha256_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_4_end"
+            app:layout_constraintStart_toEndOf="@id/lower_barrier"
+            android:lines="2"
+            tools:text="48df5229235ada28389b91e60a935e4f9b73eb4bdb855ef9258a1751f10bdc5d" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

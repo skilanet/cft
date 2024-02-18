@@ -23,11 +23,12 @@
         android:padding="8dp"
         android:src="@drawable/placeholder"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="fitCenter"/>
 
     <TextView
         android:id="@+id/tv_fio_main"
-        style="@style/people_base_main_text_style"
+        style="@style/people_main_text_style"
         android:layout_marginTop="4dp"
         android:text="@string/fio"
         app:layout_constraintStart_toEndOf="@id/iv_person_photo"
@@ -36,16 +37,17 @@
 
     <TextView
         android:id="@+id/tv_fio_info"
-        style="@style/people_base_info_text_style"
+        style="@style/people_info_text_style"
         android:layout_marginEnd="4dp"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_fio_main"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/barrier_main"
-        tools:text="Miss Jennie Nichols" />
+        tools:text="Miss Jennie Nichols"
+        android:gravity="start"/>
 
     <TextView
         android:id="@+id/tv_address_main"
-        style="@style/people_base_main_text_style"
+        style="@style/people_main_text_style"
         android:text="@string/address"
         app:layout_constraintBottom_toTopOf="@id/tv_phone_info"
         app:layout_constraintStart_toEndOf="@id/iv_person_photo"
@@ -54,30 +56,32 @@
 
     <TextView
         android:id="@+id/tv_address_info"
-        style="@style/people_base_info_text_style"
+        style="@style/people_info_text_style"
         android:layout_marginEnd="4dp"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_address_main"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/barrier_main"
-        tools:text="8929 Valwood Pkwy" />
+        tools:text="8929 Valwood Pkwy"
+        android:gravity="start"/>
 
     <TextView
         android:id="@+id/tv_phone_main"
-        style="@style/people_base_main_text_style"
+        style="@style/people_main_text_style"
         android:text="@string/phone"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/iv_person_photo"
         app:layout_constraintStart_toEndOf="@id/iv_person_photo"
         app:layout_constraintTag="tv_phone_main"
-        app:layout_constraintTop_toBottomOf="@id/tv_address_main" />
+        android:layout_marginBottom="4dp"/>
 
     <TextView
         android:id="@+id/tv_phone_info"
-        style="@style/people_base_info_text_style"
+        style="@style/people_info_text_style"
         android:layout_marginEnd="4dp"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_phone_main"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/barrier_main"
-        tools:text="(272) 790-0888" />
+        tools:text="(272) 790-0888"
+        android:gravity="start"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
